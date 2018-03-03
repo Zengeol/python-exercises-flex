@@ -4,7 +4,6 @@
 # If you type no, it will stop the program.
 count = 0
 yes = 'yes'
-# print ('You have', count, 'coins.')
 
 while (count >= 0):
     print ('You have', count, 'coins.')

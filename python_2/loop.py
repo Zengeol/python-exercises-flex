@@ -59,7 +59,7 @@ def triangle(n):
         # ending line after each row
         print("\r")
  
-# Driver Code
+    # Driver Code
 n = int(input('What is the size of the triangle?'))
 triangle(n)
 
@@ -70,4 +70,10 @@ for row in range(1,n+1):
         print(row*col, "\t",end = "")      
     print()
     
-    
+# Bonus: Print a Banner
+n = input('Text?')
+m = len(n)+2
+print('*' * m)
+print ('*' + n + '*')
+print('*' * m)
+

@@ -29,7 +29,7 @@ n = int(input('Anwer to box: What is the width?'))
 m = int(input('Anwer to box: What is the height?'))
 print('*' * n)
 for i in range(m-2):
-    print ('*' + ' ' * (m-2) + '*')
+    print ('*' + ' ' *(n-2)+ '*')
 print('*' * n)
 
 # print a triangle
@@ -76,4 +76,3 @@ m = len(n)+2
 print('*' * m)
 print ('*' + n + '*')
 print('*' * m)
-

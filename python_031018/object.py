@@ -30,6 +30,26 @@ dog1.woof() # we are overwriting the old
 class Dog (Animal):
   def __init__ (self, name, sound):
     self.sound = sound
-    super().__init__(name)
+    super().__init__(name) # take the sound and add it to my parent
   def woof (self):
     print(self.sound)
+
+class Dog (Animal):
+  def __init__ (self, sound, *args): # '*args' suck everything up and passing them through, except sound
+    self.sound = sound
+    super().__init__(*args) # take the sound and add it to my parent
+  def woof (self):
+    print(self.sound)
+# Remember we can use the debugging tools to find out what's going wrong.
+
+
+class Robot:
+  def auto_destruct (self):
+    print("Boom!")
+class RoboCat (Robot, Cat):
+pass
+class RoboDog (Robot, Dog):
+  pass
+ rcat = RobCat ('mittens')
+ rcat.meow()
+ rcat.auto_destruct()

@@ -1,4 +1,4 @@
-# Acknowledgement: I would like to thank Ziqing because most of the code came from Ziqing's homework.
+# Acknowledgement: I would like to thank Ziqing for this code.
 from turtle import *
 import random
 

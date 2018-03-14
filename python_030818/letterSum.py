@@ -4,7 +4,6 @@ letters = collections.Counter(word)
 print(letters)
 
 
-
 def countLetters(word):
     letterdict={}
     for letter in word:

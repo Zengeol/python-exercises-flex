@@ -78,10 +78,16 @@ def Q4():
 # Q4()
 
 def bonus():
-    import io
-    fh = io.StringIO()
-    fh.write("Some more stuff")
-    contents = fh.getvalue()
+    def crash():
+        fh = open('crash.txt', 'w')
+        counter = 0
+        while True:
+            fh.write('c' * (10 ** counter))
+            counter += 10 ** counter
+            print('Characters Written:', counter)
+
+
+    if __name__ == '__main__':
+        crash()
     
-# bonus() This is not working yet.
-    
+# bonus()

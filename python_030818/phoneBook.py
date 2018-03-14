@@ -1,24 +1,59 @@
+import pickle
+# def phoneBookapp():
+phoneBook = {}
+
 def lookup_entry():
-    print('lookup')
+    try:
+        name = str(input("What is the name?"))
+        print("Found entry for",name, ":", phoneBook[name])
+    except KeyError:
+        print("No entry found")
+        phonebookapp()
     return
 
 def set_entry():
-    print('set')
+    name = str(input("Name:"))
+    number = input("Phone Number:")
+    email = input("Email address:")
+    website = input("Website:")
+    phoneBook[name] = {'Name': name, 'Phone number': number, 'Email': email, 'Website': website}
+    print("Entry stored for", name)
     return
 
 def delete_entry():
-    print('delete')
+    try:
+        name = str(input("Name?"))
+        del phoneBook[name]
+        print("Deleted entry for", name)
+    except KeyError:
+        print("No entry found.")
+        phoneBookapp()
     return
 
 def list_entries():
-    print('list')
+    for i in phoneBook:
+        print("Found entry for", i, ":", phoneBook[i])
+    return
+
+def save_entries():
+    fh = open('phoneBook.pickle', 'wb')
+    pickle.dump(phoneBook, fh)
+    fh.close()
+    return
+
+def restore_saved_entries():
+    with open('phoneBook.pickle', 'rb') as fb:
+        phoneBook = pickle.load(fb)
+    print(phoneBook)
     return
 
 def quit():
-    print('quit')
+    import sys
+    # print('Bye.')
     in_use = False
+    sys.exit('Bye.')
 
-def use_phonebook():
+def use_phoneBook():
     in_use = True
 
     functions = {
@@ -26,7 +61,9 @@ def use_phonebook():
         '2': set_entry,
         '3': delete_entry,
         '4': list_entries,
-        '5': quit
+        '5': save_entries,
+        '6': restore_saved_entries,
+        '7': quit
     }
 
     instructions = 'Electronic Phone Book\n\
@@ -35,13 +72,13 @@ def use_phonebook():
     2. Set an entry\n\
     3. Delete an entry\n\
     4. List all entries\n\
-    5. Quit\n'
-
+    5. Save entries\n\
+    6. Restore saved entries\n\
+    7. Quit\n'
 
     while in_use:
         print(instructions)
-
-        ans = str(input("What do you want to do (1-5)? "))
+        ans = str(input("What do you want to do (1-7)? "))
         
         if ans in functions:
             functions[ans]()
@@ -49,4 +86,4 @@ def use_phonebook():
             print("That is not a valid input. Try again.")
 
 if __name__ == '__main__':
-    use_phonebook()
+    use_phoneBook()

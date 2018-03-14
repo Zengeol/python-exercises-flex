@@ -1,5 +1,5 @@
 import pickle
-# def phoneBookapp():
+import sys
 phoneBook = {}
 
 def lookup_entry():
@@ -48,8 +48,6 @@ def restore_saved_entries():
     return
 
 def quit():
-    import sys
-    # print('Bye.')
     in_use = False
     sys.exit('Bye.')
 

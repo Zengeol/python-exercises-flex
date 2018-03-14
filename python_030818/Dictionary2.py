@@ -24,7 +24,5 @@ ramit = {
 
 print(ramit.get('email'))
 print(ramit.get('interests')[0])
-Jasmine = ramit.get('friends')[0]
-print(Jasmine.get('email'))
-jan = ramit.get('friends')[1]
-print(jan.get("interests")[1])
+print(ramit.get('friends')[0]['email'])
+print(ramit.get("friends")[1]['interests'][1])

@@ -78,4 +78,10 @@ def Q4():
 # Q4()
 
 def bonus():
+    import io
+    fh = io.StringIO()
+    fh.write("Some more stuff")
+    contents = fh.getvalue()
+    
+# bonus() This is not working yet.
     
